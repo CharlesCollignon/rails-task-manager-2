@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>
+    <%= @task.title %>
+  </h1>
+  <div class="box detail">
+    <%= @task.details %>
+  </div>
+  <div class="box completed">
+    <input type="checkbox" id="check" name="tasks">
+  </div>
+  <div class="box home">
+    <%= link_to "Accueil", tasks_path %>
+  </div>
+  <div class="box edit">
+    <%= link_to "Editer la tâche", edit_task_path %>
+  </div>
+  <div class="box delete">
+    <%= link_to "Delete #{@task.title}",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+  </div>
+</div>

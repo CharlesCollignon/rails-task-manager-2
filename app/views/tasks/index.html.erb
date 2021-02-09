@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Index</h1>
+  <ul style="list-style-type:none;" class="box">
+    <% @tasks.each do |task| %>
+    <div>
+        <li class="list">
+        <input type="checkbox" id="check" name="tasks">
+          <%= link_to task.title, task_path(task) %>
+        </li>
+    </div>
+    <% end %>
+  </ul>
+  <div class="box newtask">
+      <%= link_to "Nouvelle tâche", new_task_path %>
+    </div>
+</div>
+
